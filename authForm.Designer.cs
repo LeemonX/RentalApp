@@ -140,7 +140,7 @@
             this.loginButton.TabIndex = 1;
             this.loginButton.Text = "Войти";
             this.loginButton.UseVisualStyleBackColor = false;
-            this.loginButton.Click += new System.EventHandler(this.loginBurron_Click);
+            this.loginButton.Click += new System.EventHandler(this.loginButton_Click);
             // 
             // authForm
             // 

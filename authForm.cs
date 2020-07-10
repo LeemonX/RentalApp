@@ -18,7 +18,7 @@ namespace RentalApp
             InitializeComponent();
         }
 
-        private void loginBurron_Click(object sender, EventArgs e)
+        private void loginButton_Click(object sender, EventArgs e)
         {
             String username = login.Text;
             String pass = password.Text;
