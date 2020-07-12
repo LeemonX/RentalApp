@@ -34,18 +34,17 @@
             this.clientMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.spacesMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.paymentsMenu = new System.Windows.Forms.ToolStripMenuItem();
-            this.rentMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.docsMenu = new System.Windows.Forms.ToolStripMenuItem();
+            this.word = new System.Windows.Forms.ToolStripMenuItem();
+            this.excel = new System.Windows.Forms.ToolStripMenuItem();
             this.adminMenu = new System.Windows.Forms.ToolStripMenuItem();
-            this.createUser = new System.Windows.Forms.ToolStripMenuItem();
-            this.editUser = new System.Windows.Forms.ToolStripMenuItem();
-            this.deleteUser = new System.Windows.Forms.ToolStripMenuItem();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.editData = new System.Windows.Forms.ToolStripMenuItem();
             this.deleteData = new System.Windows.Forms.ToolStripMenuItem();
             this.refresh = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button2 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -54,8 +53,6 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.word = new System.Windows.Forms.ToolStripMenuItem();
-            this.excel = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
@@ -77,7 +74,6 @@
             this.clientMenu,
             this.spacesMenu,
             this.paymentsMenu,
-            this.rentMenu,
             this.docsMenu,
             this.adminMenu});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
@@ -107,13 +103,6 @@
             this.paymentsMenu.Text = "Оплаты";
             this.paymentsMenu.Click += new System.EventHandler(this.paymentsMenu_Click);
             // 
-            // rentMenu
-            // 
-            this.rentMenu.Name = "rentMenu";
-            this.rentMenu.Size = new System.Drawing.Size(140, 24);
-            this.rentMenu.Text = "Создать договор";
-            this.rentMenu.Click += new System.EventHandler(this.rentMenu_Click);
-            // 
             // docsMenu
             // 
             this.docsMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -123,33 +112,26 @@
             this.docsMenu.Size = new System.Drawing.Size(73, 24);
             this.docsMenu.Text = "Отчеты";
             // 
+            // word
+            // 
+            this.word.Name = "word";
+            this.word.Size = new System.Drawing.Size(128, 26);
+            this.word.Text = "Word";
+            this.word.Click += new System.EventHandler(this.word_Click);
+            // 
+            // excel
+            // 
+            this.excel.Name = "excel";
+            this.excel.Size = new System.Drawing.Size(128, 26);
+            this.excel.Text = "Excel";
+            this.excel.Click += new System.EventHandler(this.excel_Click);
+            // 
             // adminMenu
             // 
-            this.adminMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.createUser,
-            this.editUser,
-            this.deleteUser});
             this.adminMenu.Name = "adminMenu";
             this.adminMenu.Size = new System.Drawing.Size(127, 24);
             this.adminMenu.Text = "Админ. панель";
-            // 
-            // createUser
-            // 
-            this.createUser.Name = "createUser";
-            this.createUser.Size = new System.Drawing.Size(261, 26);
-            this.createUser.Text = "Новый пользователь";
-            // 
-            // editUser
-            // 
-            this.editUser.Name = "editUser";
-            this.editUser.Size = new System.Drawing.Size(261, 26);
-            this.editUser.Text = "Изменить пользователя";
-            // 
-            // deleteUser
-            // 
-            this.deleteUser.Name = "deleteUser";
-            this.deleteUser.Size = new System.Drawing.Size(261, 26);
-            this.deleteUser.Text = "Удалить пользователя";
+            this.adminMenu.Click += new System.EventHandler(this.adminMenu_Click);
             // 
             // dataGridView1
             // 
@@ -203,6 +185,7 @@
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.panel1.Controls.Add(this.button2);
             this.panel1.Controls.Add(this.textBox1);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label3);
@@ -212,6 +195,21 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(255, 393);
             this.panel1.TabIndex = 4;
+            // 
+            // button2
+            // 
+            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.button2.BackColor = System.Drawing.SystemColors.Highlight;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button2.ForeColor = System.Drawing.Color.Cornsilk;
+            this.button2.Location = new System.Drawing.Point(0, 341);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(252, 40);
+            this.button2.TabIndex = 6;
+            this.button2.Text = "Новая аренда";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // textBox1
             // 
@@ -253,12 +251,12 @@
             // 
             // button1
             // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.button1.BackColor = System.Drawing.SystemColors.Highlight;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button1.ForeColor = System.Drawing.Color.Cornsilk;
-            this.button1.Location = new System.Drawing.Point(0, 341);
+            this.button1.Location = new System.Drawing.Point(0, 295);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(252, 40);
             this.button1.TabIndex = 0;
@@ -301,19 +299,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Арендованные площади";
             // 
-            // word
-            // 
-            this.word.Name = "word";
-            this.word.Size = new System.Drawing.Size(224, 26);
-            this.word.Text = "Word";
-            this.word.Click += new System.EventHandler(this.word_Click);
-            // 
-            // excel
-            // 
-            this.excel.Name = "excel";
-            this.excel.Size = new System.Drawing.Size(224, 26);
-            this.excel.Text = "Excel";
-            // 
             // mainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
@@ -348,12 +333,8 @@
         private System.Windows.Forms.ToolStripMenuItem clientMenu;
         private System.Windows.Forms.ToolStripMenuItem spacesMenu;
         private System.Windows.Forms.ToolStripMenuItem paymentsMenu;
-        private System.Windows.Forms.ToolStripMenuItem rentMenu;
         private System.Windows.Forms.ToolStripMenuItem docsMenu;
         private System.Windows.Forms.ToolStripMenuItem adminMenu;
-        private System.Windows.Forms.ToolStripMenuItem createUser;
-        private System.Windows.Forms.ToolStripMenuItem editUser;
-        private System.Windows.Forms.ToolStripMenuItem deleteUser;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
@@ -370,5 +351,6 @@
         private System.Windows.Forms.ToolStripMenuItem refresh;
         private System.Windows.Forms.ToolStripMenuItem word;
         private System.Windows.Forms.ToolStripMenuItem excel;
+        private System.Windows.Forms.Button button2;
     }
 }

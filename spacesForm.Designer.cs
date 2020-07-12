@@ -33,8 +33,12 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.addSpace = new System.Windows.Forms.ToolStripMenuItem();
+            this.editSpace = new System.Windows.Forms.ToolStripMenuItem();
+            this.deleteSpace = new System.Windows.Forms.ToolStripMenuItem();
+            this.refresh = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.textBox6 = new System.Windows.Forms.TextBox();
@@ -47,14 +51,10 @@
             this.label4 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.addSpace = new System.Windows.Forms.ToolStripMenuItem();
-            this.editSpace = new System.Windows.Forms.ToolStripMenuItem();
-            this.deleteSpace = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.contextMenuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label2
@@ -109,12 +109,50 @@
             this.dataGridView1.Size = new System.Drawing.Size(539, 417);
             this.dataGridView1.TabIndex = 10;
             // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.addSpace,
+            this.editSpace,
+            this.deleteSpace,
+            this.refresh});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(205, 100);
+            // 
+            // addSpace
+            // 
+            this.addSpace.Name = "addSpace";
+            this.addSpace.Size = new System.Drawing.Size(204, 24);
+            this.addSpace.Text = "Добавить данные";
+            this.addSpace.Click += new System.EventHandler(this.addSpace_Click);
+            // 
+            // editSpace
+            // 
+            this.editSpace.Name = "editSpace";
+            this.editSpace.Size = new System.Drawing.Size(204, 24);
+            this.editSpace.Text = "Изменить данные";
+            this.editSpace.Click += new System.EventHandler(this.editSpace_Click);
+            // 
+            // deleteSpace
+            // 
+            this.deleteSpace.Name = "deleteSpace";
+            this.deleteSpace.Size = new System.Drawing.Size(204, 24);
+            this.deleteSpace.Text = "Удалить данные";
+            this.deleteSpace.Click += new System.EventHandler(this.deleteSpace_Click);
+            // 
+            // refresh
+            // 
+            this.refresh.Name = "refresh";
+            this.refresh.Size = new System.Drawing.Size(204, 24);
+            this.refresh.Text = "Обновить";
+            this.refresh.Click += new System.EventHandler(this.refresh_Click);
+            // 
             // panel1
             // 
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.panel1.Controls.Add(this.checkBox2);
             this.panel1.Controls.Add(this.checkBox1);
             this.panel1.Controls.Add(this.textBox5);
             this.panel1.Controls.Add(this.textBox6);
@@ -131,17 +169,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(255, 417);
             this.panel1.TabIndex = 11;
-            // 
-            // checkBox2
-            // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.checkBox2.Location = new System.Drawing.Point(11, 295);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(118, 23);
-            this.checkBox2.TabIndex = 26;
-            this.checkBox2.Text = "Арендовано";
-            this.checkBox2.UseVisualStyleBackColor = true;
             // 
             // checkBox1
             // 
@@ -240,7 +267,7 @@
             // 
             // button1
             // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.button1.BackColor = System.Drawing.SystemColors.Highlight;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -264,37 +291,6 @@
             this.panel2.Size = new System.Drawing.Size(800, 27);
             this.panel2.TabIndex = 12;
             // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.addSpace,
-            this.editSpace,
-            this.deleteSpace});
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(205, 76);
-            // 
-            // addSpace
-            // 
-            this.addSpace.Name = "addSpace";
-            this.addSpace.Size = new System.Drawing.Size(204, 24);
-            this.addSpace.Text = "Добавить данные";
-            this.addSpace.Click += new System.EventHandler(this.addSpace_Click);
-            // 
-            // editSpace
-            // 
-            this.editSpace.Name = "editSpace";
-            this.editSpace.Size = new System.Drawing.Size(204, 24);
-            this.editSpace.Text = "Изменить данные";
-            this.editSpace.Click += new System.EventHandler(this.editSpace_Click);
-            // 
-            // deleteSpace
-            // 
-            this.deleteSpace.Name = "deleteSpace";
-            this.deleteSpace.Size = new System.Drawing.Size(204, 24);
-            this.deleteSpace.Text = "Удалить данные";
-            this.deleteSpace.Click += new System.EventHandler(this.deleteSpace_Click);
-            // 
             // spacesForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -307,11 +303,11 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Торговые площади";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.contextMenuStrip1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -334,11 +330,11 @@
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox lvl;
-        private System.Windows.Forms.CheckBox checkBox2;
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem addSpace;
         private System.Windows.Forms.ToolStripMenuItem editSpace;
         private System.Windows.Forms.ToolStripMenuItem deleteSpace;
+        private System.Windows.Forms.ToolStripMenuItem refresh;
     }
 }

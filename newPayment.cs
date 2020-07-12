@@ -28,14 +28,16 @@ namespace RentalApp
             {
                 NpgsqlCommand insertPayment = new NpgsqlCommand("INSERT INTO payments(rentcode, clientcode, paymentdate, paymentamount) VALUES (@rcode, (SELECT clientcode from rentedSpaces WHERE rentCode=@rcode), @pdate, @pamount)", connection);
 
-                insertPayment.Parameters.Add("rcode", NpgsqlTypes.NpgsqlDbType.Integer).Value = int.Parse(textBox1.Text.Trim());
-                insertPayment.Parameters.Add("pamount", NpgsqlTypes.NpgsqlDbType.Money).Value = int.Parse(textBox2.Text.Trim());
-                insertPayment.Parameters.Add("pdate", NpgsqlTypes.NpgsqlDbType.Date).Value = DateTime.Parse((string)dateTimePicker1.Text);
+                insertPayment.Parameters.Add("@rcode", NpgsqlTypes.NpgsqlDbType.Integer).Value = int.Parse(textBox1.Text.Trim());
+                insertPayment.Parameters.Add("@pamount", NpgsqlTypes.NpgsqlDbType.Numeric).Value = float.Parse(textBox2.Text.Trim());
+                insertPayment.Parameters.Add("@pdate", NpgsqlTypes.NpgsqlDbType.Date).Value = DateTime.Parse((string)dateTimePicker1.Text);
+                insertPayment.ExecuteNonQuery();
             }
 
-            catch (Exception)
+            catch (Exception ex)
             {
                 MessageBox.Show("Проверьте введенные данные");
+                Console.WriteLine(ex);
             }
 
 

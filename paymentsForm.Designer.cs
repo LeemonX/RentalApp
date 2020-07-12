@@ -32,7 +32,12 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.deletePayment = new System.Windows.Forms.ToolStripMenuItem();
+            this.editPayment = new System.Windows.Forms.ToolStripMenuItem();
+            this.refresh = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button2 = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
@@ -43,15 +48,10 @@
             this.label4 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.deleteClient = new System.Windows.Forms.ToolStripMenuItem();
-            this.editClient = new System.Windows.Forms.ToolStripMenuItem();
-            this.addClient = new System.Windows.Forms.ToolStripMenuItem();
-            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.contextMenuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label2
@@ -94,6 +94,37 @@
             this.dataGridView1.Size = new System.Drawing.Size(539, 417);
             this.dataGridView1.TabIndex = 10;
             // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.deletePayment,
+            this.editPayment,
+            this.refresh});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(205, 76);
+            // 
+            // deletePayment
+            // 
+            this.deletePayment.Name = "deletePayment";
+            this.deletePayment.Size = new System.Drawing.Size(204, 24);
+            this.deletePayment.Text = "Удалить данные";
+            this.deletePayment.Click += new System.EventHandler(this.deletePayment_Click);
+            // 
+            // editPayment
+            // 
+            this.editPayment.Name = "editPayment";
+            this.editPayment.Size = new System.Drawing.Size(204, 24);
+            this.editPayment.Text = "Изменить данные";
+            this.editPayment.Click += new System.EventHandler(this.editPayment_Click);
+            // 
+            // refresh
+            // 
+            this.refresh.Name = "refresh";
+            this.refresh.Size = new System.Drawing.Size(204, 24);
+            this.refresh.Text = "Обновить";
+            this.refresh.Click += new System.EventHandler(this.refresh_Click);
+            // 
             // panel1
             // 
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -113,6 +144,21 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(255, 417);
             this.panel1.TabIndex = 11;
+            // 
+            // button2
+            // 
+            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.button2.BackColor = System.Drawing.SystemColors.Highlight;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button2.ForeColor = System.Drawing.Color.Cornsilk;
+            this.button2.Location = new System.Drawing.Point(0, 320);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(252, 40);
+            this.button2.TabIndex = 23;
+            this.button2.Text = "Поиск";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // label3
             // 
@@ -190,7 +236,7 @@
             // 
             // button1
             // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.button1.BackColor = System.Drawing.SystemColors.Highlight;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -214,51 +260,6 @@
             this.panel2.Size = new System.Drawing.Size(800, 27);
             this.panel2.TabIndex = 12;
             // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.deleteClient,
-            this.editClient,
-            this.addClient});
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(205, 76);
-            // 
-            // deleteClient
-            // 
-            this.deleteClient.Name = "deleteClient";
-            this.deleteClient.Size = new System.Drawing.Size(210, 24);
-            this.deleteClient.Text = "Удалить данные";
-            this.deleteClient.Click += new System.EventHandler(this.deleteClient_Click);
-            // 
-            // editClient
-            // 
-            this.editClient.Name = "editClient";
-            this.editClient.Size = new System.Drawing.Size(210, 24);
-            this.editClient.Text = "Изменить данные";
-            this.editClient.Click += new System.EventHandler(this.editClient_Click);
-            // 
-            // addClient
-            // 
-            this.addClient.Name = "addClient";
-            this.addClient.Size = new System.Drawing.Size(210, 24);
-            this.addClient.Text = "Добавить данные";
-            this.addClient.Click += new System.EventHandler(this.addClient_Click);
-            // 
-            // button2
-            // 
-            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button2.BackColor = System.Drawing.SystemColors.Highlight;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button2.ForeColor = System.Drawing.Color.Cornsilk;
-            this.button2.Location = new System.Drawing.Point(0, 320);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(252, 40);
-            this.button2.TabIndex = 23;
-            this.button2.Text = "Поиск";
-            this.button2.UseVisualStyleBackColor = false;
-            // 
             // paymentsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -271,11 +272,11 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Оплаты";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.contextMenuStrip1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -297,9 +298,9 @@
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem deleteClient;
-        private System.Windows.Forms.ToolStripMenuItem editClient;
-        private System.Windows.Forms.ToolStripMenuItem addClient;
+        private System.Windows.Forms.ToolStripMenuItem deletePayment;
+        private System.Windows.Forms.ToolStripMenuItem editPayment;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.ToolStripMenuItem refresh;
     }
 }

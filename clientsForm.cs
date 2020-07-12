@@ -15,9 +15,13 @@ namespace RentalApp
     {
         private String conString;
         private NpgsqlConnection connection;
-        public clientsForm()
+        private bool userrole;
+        public clientsForm(bool userrole)
         {
             InitializeComponent();
+            this.userrole = userrole;
+            deleteClient.Visible = userrole;
+            editClient.Visible = userrole;
             update();
         }
 
@@ -155,6 +159,11 @@ namespace RentalApp
 
             dataGridView1.DataSource = rTable;
             connection.Close();
+        }
+
+        private void refresh_Click(object sender, EventArgs e)
+        {
+            update();
         }
     }
 }

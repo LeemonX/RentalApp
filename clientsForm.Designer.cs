@@ -44,6 +44,7 @@
             this.deleteClient = new System.Windows.Forms.ToolStripMenuItem();
             this.addClient = new System.Windows.Forms.ToolStripMenuItem();
             this.editClient = new System.Windows.Forms.ToolStripMenuItem();
+            this.refresh = new System.Windows.Forms.ToolStripMenuItem();
             this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
@@ -75,7 +76,7 @@
             // 
             // button1
             // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.button1.BackColor = System.Drawing.SystemColors.Highlight;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -189,9 +190,10 @@
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.deleteClient,
             this.addClient,
-            this.editClient});
+            this.editClient,
+            this.refresh});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(207, 76);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(207, 100);
             // 
             // deleteClient
             // 
@@ -213,6 +215,13 @@
             this.editClient.Size = new System.Drawing.Size(206, 24);
             this.editClient.Text = "Изменить клиента";
             this.editClient.Click += new System.EventHandler(this.editClient_Click);
+            // 
+            // refresh
+            // 
+            this.refresh.Name = "refresh";
+            this.refresh.Size = new System.Drawing.Size(206, 24);
+            this.refresh.Text = "Обновить";
+            this.refresh.Click += new System.EventHandler(this.refresh_Click);
             // 
             // label2
             // 
@@ -291,5 +300,6 @@
         private System.Windows.Forms.ToolStripMenuItem deleteClient;
         private System.Windows.Forms.ToolStripMenuItem addClient;
         private System.Windows.Forms.ToolStripMenuItem editClient;
+        private System.Windows.Forms.ToolStripMenuItem refresh;
     }
 }
